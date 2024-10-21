@@ -17,6 +17,24 @@ h1{
   margin: 1rem 0;
 }
 
+/* ハンバーガーメニューのスタイル */
+.hamburger{
+  cursor: pointer;
+  padding-right: 20px;
+}
+.hamburger .line{
+  background: #ff9776;
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 636px){
+  .hamburger {
+    display: none;
+  }
+}
+
 /* ナビゲーションのスタイル */
 .nav-links{
   background: #ff9776;
@@ -42,7 +60,7 @@ h1{
 .expanded{
   display: unset;
 }
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 636px){
   .nav-links{
     background: none;
     position: static;
