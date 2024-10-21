@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "ブログ";
 ---
 
 <html lang="jp">
@@ -8,7 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro | Blog</title>
+		<title>Astro | {pageTitle}</title>
 	</head>
 
 	<body>
@@ -16,7 +16,7 @@
     <a href="/astro-tutorial/about/">概要</a>
     <a href="/astro-tutorial/blog/">ブログ</a>
 
-    <h1>私のAstro学習ブログ</h1>
+    <h1>{pageTitle}</h1>
     <p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
 
     <ul>
