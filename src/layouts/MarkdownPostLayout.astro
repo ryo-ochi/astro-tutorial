@@ -7,11 +7,15 @@ const {frontmatter} = Astro.props;
   <p>投稿日: {frontmatter.pubDate.toString().slice(0,10)}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>著者: {frontmatter.author}</p>
-  <div class="tags">
-    タグ:{frontmatter.tags.map((tag) => <a href="/astro-tutorial/" class="tag">#{tag}</a>)}
-  </div>
   <div class="img">
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  </div>
+
+  <div class="tags">
+    タグ:
+    {frontmatter.tags.map((tag) => 
+      <p class="tag"><a href={`/astro-tutorial/tags/${tag}`}>{tag}</a></p>)
+    }
   </div>
 
   <slot />
@@ -25,9 +29,21 @@ const {frontmatter} = Astro.props;
     padding: 1rem 0.75rem 0.25rem;
     margin-top: 1.5rem;
   }
+  a{
+    color: #00539F;
+  }
+  .tags{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+  }
   .tag{
-    color: #212121;
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
+    background: #F8FCFD;
+    font-size: 1em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .25em 1em;
+    margin: 0.25em;
   }
 </style>
